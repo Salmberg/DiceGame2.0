@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var diceNumber1 = 1
+    @State var computerDice = 0
+    @State var playerDice = 0
+    @State var computerSum = 0
+    @State var playerSum = 0
+    @State var showingBustSheet = false
+
+
     
     var body: some View {
         
@@ -19,19 +25,36 @@ struct ContentView: View {
             
             VStack {
                 
-                
+                Text("Computers dice")
+                    .font(.largeTitle)
+                Text("\(computerSum)")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
                 Spacer()
                 
+                DiceView(theDice: computerDice)
+                
+                Text("\(playerSum)")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
+                DiceView(theDice: playerDice)
+                Spacer()
+                
+                
                 HStack {
-                    DiceView(theDice: diceNumber1)
+                    
+
+                    
                 }.onAppear() {
-                    newDiceValue()
+                    //newDiceValue()
                 }
                 Button(action: {
-                    newDiceValue()
+                    rollTheDice()
                     
                 }, label: {
-                    Text("Roll the Dice")
+                    Text("Roll your dice")
                         .font(.largeTitle)
                         .padding()
                         .foregroundColor(Color.white)
@@ -41,12 +64,35 @@ struct ContentView: View {
                 Spacer()
             }
         }
+        .sheet(isPresented: $showingBustSheet, onDismiss: {
+            computerSum = 0
+            playerSum = 0
+        }, content: {
+            BustSheet(computerSum: computerSum, playerSum: playerSum)
+        })
     }
     
     
+    func rollTheDice(){
+       newDiceValue()
+        
+        computerSum += computerDice
+        playerSum += playerDice
+        
+       
+    }
+    
     func newDiceValue(){
-        diceNumber1 = Int.random(in: 1...6)
-        //diceNumber2 = Int.random(in: 1...6)
+        computerDice = Int.random(in: 1...6)
+        playerDice = Int.random(in: 1...6)
+      
+        
+        computerSum += computerDice
+        playerSum += playerDice
+        
+        if (computerSum >= 100 || playerSum >= 100) {
+                showingBustSheet = true
+            }
     }
 }
 
@@ -60,6 +106,31 @@ struct DiceView : View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .padding()
+    }
+}
+struct BustSheet : View {
+    let computerSum : Int
+    let playerSum : Int
+    
+    
+    var body: some View {
+        ZStack{
+            Color(red: 38/256, green: 108/256, blue: 59/256)
+                .ignoresSafeArea()
+            VStack {
+                Text("We have a winner!")
+                    .foregroundColor(.white)
+                    .font(.title)
+                Text(" the computer got \(computerSum)")
+                    .foregroundColor(.black)
+                    .font(.title)
+                    .padding()
+                Text("and you got \(playerSum)")
+                    .foregroundColor(.black)
+                    .font(.title)
+                    .padding()
+            }
+        }
     }
 }
 
