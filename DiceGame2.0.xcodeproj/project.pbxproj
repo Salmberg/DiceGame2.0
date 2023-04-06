@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB83A7F629DF192800BD43F7 /* BetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB83A7F529DF192800BD43F7 /* BetData.swift */; };
 		CBCA8B4429DB03B200ED4588 /* DiceGame2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCA8B4329DB03B200ED4588 /* DiceGame2_0App.swift */; };
 		CBCA8B4629DB03B200ED4588 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCA8B4529DB03B200ED4588 /* ContentView.swift */; };
 		CBCA8B4829DB03B300ED4588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCA8B4729DB03B300ED4588 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB83A7F529DF192800BD43F7 /* BetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetData.swift; sourceTree = "<group>"; };
 		CBCA8B4029DB03B200ED4588 /* DiceGame2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiceGame2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCA8B4329DB03B200ED4588 /* DiceGame2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceGame2_0App.swift; sourceTree = "<group>"; };
 		CBCA8B4529DB03B200ED4588 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB83A7F429DF18E900BD43F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB83A7F529DF192800BD43F7 /* BetData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CBCA8B3729DB03B200ED4588 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		CBCA8B4229DB03B200ED4588 /* DiceGame2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				CB83A7F429DF18E900BD43F7 /* Model */,
 				CBCA8B4329DB03B200ED4588 /* DiceGame2_0App.swift */,
 				CBCA8B4529DB03B200ED4588 /* ContentView.swift */,
 				CBCA8B4729DB03B300ED4588 /* Assets.xcassets */,
@@ -257,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB83A7F629DF192800BD43F7 /* BetData.swift in Sources */,
 				CBCA8B4629DB03B200ED4588 /* ContentView.swift in Sources */,
 				CBCA8B4429DB03B200ED4588 /* DiceGame2_0App.swift in Sources */,
 			);
