@@ -13,7 +13,8 @@ struct ContentView: View {
     @State var computerSum = 0
     @State var playerSum = 0
     @State var newBet = 0
-    @State var bet = 0
+    @State var amount = 0
+    //@State var bet = 0
     @State var showingBustSheet = false
     @State var showingBetSheet = false
     
@@ -28,6 +29,7 @@ struct ContentView: View {
             
             VStack {
                 Text("Your current bet: \(newBet)$")
+                Text("Your current amount: \(amount)$")
                 HStack {
                     Spacer()
                     Text("Computer")
@@ -99,7 +101,7 @@ struct ContentView: View {
             computerSum = 0
             playerSum = 0
         }, content: {
-            BustSheet(computerSum: computerSum, playerSum: playerSum)
+            BustSheet(computerSum: computerSum, playerSum: playerSum, newAmount: amount)
         })
         
         .sheet(isPresented: $showingBetSheet, onDismiss: {
@@ -134,121 +136,10 @@ struct ContentView: View {
     }
 }
 
-
-
-struct DiceView : View {
-    
-    let theDice : Int
-    var body: some View{
-        Image(systemName: "die.face.\(theDice)")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .padding()
-    }
-}
-struct BustSheet : View {
-    let computerSum : Int
-    let playerSum : Int
-    
-    
-    var body: some View {
-        ZStack{
-            Color(red: 38/256, green: 108/256, blue: 59/256)
-                .ignoresSafeArea()
-            VStack {
-                Text("We have a winner!")
-                    .foregroundColor(.white)
-                    .font(.title)
-                Text(" the computer got \(computerSum)")
-                    .foregroundColor(.black)
-                    .font(.title)
-                    .padding()
-                Text("Player got \(playerSum)")
-                    .foregroundColor(.black)
-                    .font(.title)
-                    .padding()
-            }
-        }
-    }
-}
-struct BetSheet : View {
-    let computerSum : Int
-    let playerSum : Int
-    @Binding var newBet: Int
-    
-    
-    var body: some View {
-        ZStack{
-            Color(red: 38/256, green: 108/256, blue: 59/256)
-                .ignoresSafeArea()
-            VStack {
-                Spacer()
-                Text("Place your bet")
-                    .foregroundColor(.white)
-                    .font(.title)
-                Spacer()
-                
-                Text("Your current bet: \(newBet)$")
-                    .font(.largeTitle)
-                Spacer()
-                Button(action: {
-                    newBet += 5
-                }, label: {
-                    Text("Place 5$")
-                        .font(.largeTitle)
-                        .padding()
-                        .foregroundColor(Color.white)
-                })
-                .background(Color.red)
-                .cornerRadius(15.0)
-                
-                Button(action: {
-                    newBet += 10
-                    
-                }, label: {
-                    Text("Place 10$")
-                        .font(.largeTitle)
-                        .padding()
-                        .foregroundColor(Color.white)
-                })
-                .background(Color.red)
-                .cornerRadius(15.0)
-                .padding()
-                
-                Button(action: {
-                    newBet += 20
-                    
-                }, label: {
-                    Text("Place 20$")
-                        .font(.largeTitle)
-                        .padding()
-                        .foregroundColor(Color.white)
-                })
-                .background(Color.red)
-                .cornerRadius(15.0)
-                
-                Spacer()
-                Button(action: {
-                    newBet = 0
-                    
-                }, label: {
-                    Text("Reset")
-                        .font(.largeTitle)
-                        .padding()
-                        .foregroundColor(Color.white)
-                })
-                
-                
-            }
-        }
-        
-    }
-    
-    
-    
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
         }
     }
-}
+
+

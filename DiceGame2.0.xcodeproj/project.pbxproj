@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CB83A7F629DF192800BD43F7 /* BetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB83A7F529DF192800BD43F7 /* BetData.swift */; };
+		CB83A7F929E01B3C00BD43F7 /* BetSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB83A7F829E01B3C00BD43F7 /* BetSheet.swift */; };
+		CB83A7FB29E01CFB00BD43F7 /* BustSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB83A7FA29E01CFB00BD43F7 /* BustSheet.swift */; };
+		CB83A7FD29E01E6700BD43F7 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB83A7FC29E01E6700BD43F7 /* DiceView.swift */; };
 		CBCA8B4429DB03B200ED4588 /* DiceGame2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCA8B4329DB03B200ED4588 /* DiceGame2_0App.swift */; };
 		CBCA8B4629DB03B200ED4588 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCA8B4529DB03B200ED4588 /* ContentView.swift */; };
 		CBCA8B4829DB03B300ED4588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCA8B4729DB03B300ED4588 /* Assets.xcassets */; };
@@ -36,6 +39,9 @@
 
 /* Begin PBXFileReference section */
 		CB83A7F529DF192800BD43F7 /* BetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetData.swift; sourceTree = "<group>"; };
+		CB83A7F829E01B3C00BD43F7 /* BetSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetSheet.swift; sourceTree = "<group>"; };
+		CB83A7FA29E01CFB00BD43F7 /* BustSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BustSheet.swift; sourceTree = "<group>"; };
+		CB83A7FC29E01E6700BD43F7 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
 		CBCA8B4029DB03B200ED4588 /* DiceGame2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiceGame2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCA8B4329DB03B200ED4588 /* DiceGame2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceGame2_0App.swift; sourceTree = "<group>"; };
 		CBCA8B4529DB03B200ED4588 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +87,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CB83A7F729E01B1A00BD43F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB83A7F829E01B3C00BD43F7 /* BetSheet.swift */,
+				CB83A7FA29E01CFB00BD43F7 /* BustSheet.swift */,
+				CB83A7FC29E01E6700BD43F7 /* DiceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CBCA8B3729DB03B200ED4588 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +120,7 @@
 		CBCA8B4229DB03B200ED4588 /* DiceGame2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				CB83A7F729E01B1A00BD43F7 /* Views */,
 				CB83A7F429DF18E900BD43F7 /* Model */,
 				CBCA8B4329DB03B200ED4588 /* DiceGame2_0App.swift */,
 				CBCA8B4529DB03B200ED4588 /* ContentView.swift */,
@@ -269,8 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB83A7F629DF192800BD43F7 /* BetData.swift in Sources */,
+				CB83A7FD29E01E6700BD43F7 /* DiceView.swift in Sources */,
+				CB83A7F929E01B3C00BD43F7 /* BetSheet.swift in Sources */,
 				CBCA8B4629DB03B200ED4588 /* ContentView.swift in Sources */,
 				CBCA8B4429DB03B200ED4588 /* DiceGame2_0App.swift in Sources */,
+				CB83A7FB29E01CFB00BD43F7 /* BustSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
